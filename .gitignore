@@ -1,0 +1,8 @@
+# Ignore everything by default.
+*
+
+# Keep the site source files and this ignore rule tracked.
+!.gitignore
+!index.html
+!*.html
+!*.css
