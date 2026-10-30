@@ -1,0 +1,213 @@
+/* Exact fonts identified from the original PDF -------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=League+Spartan:wght@700&display=swap");
+
+@font-face {
+  font-family: "BDScript";
+  src: url("https://db.onlinewebfonts.com/t/7e0809262f8caf0754fb7ffa53733a98.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --background: #292929;
+  --foreground: #f2f0ed;
+  --accent: #ff3038;
+  --content-width: 760px;
+}
+
+/* Base styles ------------------------------------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+/* Page layout ------------------------------------------------------------ */
+
+.menu {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+.menu-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: clamp(38px, 7vw, 80px) clamp(24px, 7vw, 84px) 90px;
+}
+
+/* Section header --------------------------------------------------------- */
+
+.menu-header {
+  position: relative;
+  min-height: 245px;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.menu-header h1 {
+  margin: 0;
+  color: var(--accent);
+  font-family: "League Spartan", Arial, Helvetica, sans-serif;
+  font-size: clamp(56px, 9vw, 112px);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.75;
+}
+
+.menu-header p {
+  margin: 20px 0 0;
+  color: var(--accent);
+  font-family: "BDScript", "Brush Script MT", cursive;
+  font-size: clamp(55px, 9vw, 110px);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.price-note {
+  margin-top: 32px;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Menu items ------------------------------------------------------------- */
+
+.menu-items {
+  display: grid;
+  gap: 26px;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 20px;
+  font-size: clamp(17px, 2.15vw, 25px);
+  font-family: "League Spartan", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.15;
+}
+
+.menu-item strong {
+  font-weight: 400;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.menu-item small {
+  display: block;
+  max-width: 95%;
+  margin-top: 1px;
+  font-size: clamp(11px, 1.35vw, 16px);
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+/* Special menu layouts --------------------------------------------------- */
+
+.detailed-items {
+  gap: 17px;
+}
+
+.halloween-items {
+  gap: 26px;
+}
+
+.spirits {
+  gap: 9px;
+}
+
+.menu-group {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 42px;
+}
+
+.menu-group h2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 18px;
+  font-size: clamp(20px, 2.8vw, 31px);
+  line-height: 1.1;
+}
+
+.menu-group h2 span {
+  align-self: end;
+  font-size: 0.8em;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.wine-items {
+  gap: 0;
+}
+
+.wine-items .menu-item {
+  gap: 12px;
+  font-size: clamp(17px, 2.1vw, 24px);
+}
+
+/* Desktop and mobile adjustments ---------------------------------------- */
+
+@media (min-width: 761px) {
+  .menu-page {
+    min-height: 1000px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 12px #00000020;
+  }
+}
+
+@media (max-width: 520px) {
+  .menu-page {
+    padding-bottom: 70px;
+  }
+
+  .menu-header {
+    min-height: 215px;
+  }
+
+  .menu-items {
+    gap: 22px;
+  }
+
+  .detailed-items {
+    gap: 15px;
+  }
+
+  .halloween-items {
+    gap: 22px;
+  }
+
+  .menu-item {
+    gap: 12px;
+    letter-spacing: 0;
+  }
+
+  .menu-item small {
+    max-width: 100%;
+  }
+
+  .menu-group {
+    margin-bottom: 34px;
+  }
+}
